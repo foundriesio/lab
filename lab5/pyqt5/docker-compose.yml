@@ -1,0 +1,17 @@
+version: '3.6'
+
+services:
+  pyqt5:
+    image: pyqt5:latest
+    restart: always
+    network_mode: "host"
+    volumes:
+      - /run/user/63:/run/user/63
+      - /dev/dri:/dev/dri
+      - /dev/pvr_sync:/dev/pvr_sync
+    device_cgroup_rules:
+      - 'c 226:* rmw'
+      - 'c 10:* rmw'  
+    environment:
+      QT_QPA_PLATFORM: "wayland"
+      WAYLAND_DISPLAY: "wayland-0"
