@@ -1,0 +1,17 @@
+version: '3.6'
+
+services:
+  pyqt5-<your-name>:
+    image: hub.foundries.io/<Factory-NANME>/pyqt5-<your-name>:latest
+    restart: always
+    network_mode: "host"
+    volumes:
+      - /run/user/63:/run/user/63
+      - /dev/dri:/dev/dri
+      - /dev/pvr_sync:/dev/pvr_sync
+    device_cgroup_rules:
+      - 'c 226:* rmw'
+      - 'c 10:* rmw'  
+    environment:
+      QT_QPA_PLATFORM: "wayland"
+      WAYLAND_DISPLAY: "wayland-0"
