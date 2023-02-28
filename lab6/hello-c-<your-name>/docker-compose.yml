@@ -1,0 +1,5 @@
+version: '3.6'
+
+services:
+  hello-c-<your-name>:
+    image: hub.foundries.io/<Factory-NANME>/hello-c-<your-name>:latest
