@@ -1,3 +1,8 @@
+# docker build --tag hello-c:latest .
+#
+# docker run -it --rm hello-c:latest
+#
+
 FROM debian:bullseye-20220316-slim
 
 #Install packages
